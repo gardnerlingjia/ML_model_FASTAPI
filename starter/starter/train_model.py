@@ -39,7 +39,8 @@ def compute_slice_metrics(data, categorical_features, model, encoder, lb):
                 )
 
     print(f"Slice metrics written to: {output_path.resolve()}")
-    
+
+
 data = pd.read_csv("starter/data/census.csv")
 data.columns = data.columns.str.strip()
 

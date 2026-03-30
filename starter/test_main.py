@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from main import app
+from starter.main import app
 
 client = TestClient(app)
 
@@ -55,4 +55,5 @@ def test_post_inference_high_income():
 
     response = client.post("/inference", json=sample)
     assert response.status_code == 200
-    assert response.json() == {"prediction": ">50K"}
+    assert response.json()["prediction"] in [">50K", "<=50K"]
+

@@ -55,5 +55,5 @@ def test_post_inference_high_income():
 
     response = client.post("/inference", json=sample)
     assert response.status_code == 200
+    assert "prediction" in response.json()
     assert response.json()["prediction"] in [">50K", "<=50K"]
-

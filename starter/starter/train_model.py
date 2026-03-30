@@ -69,7 +69,11 @@ X_test, y_test, _, _ = process_data(
 )
 
 # Train and save a model.
-model = RandomForestClassifier(random_state=42)
+model = RandomForestClassifier(
+    n_estimators=5,
+    max_depth=3,
+    random_state=42
+)
 model.fit(X_train, y_train)
 
 compute_slice_metrics(test, cat_features, model, encoder, lb)

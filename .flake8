@@ -5,5 +5,6 @@ exclude =
     __pycache__,
     .venv,
     .venv313,
+    .heroku,
     starter/sanitycheck.py
 max-line-length = 88
